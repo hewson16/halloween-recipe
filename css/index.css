@@ -1,11 +1,11 @@
-.sweet {
+.sweet a, .sweet {
     color: green;
 }
 
-.savory {
+.savory a, .savory{
     color: blue;
 }
 
-.drinks {
+.drinks a, .drinks {
     color: red;
 }

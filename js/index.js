@@ -6,9 +6,22 @@ function showRecipe() {
     const recipeDisplay = document.getElementById('recipe-list');
     
     // Recipes
-    const sweetRecipe = ['BOOberry Pies', 'Rice Crispy Brains', 'Mummy Cake Pops'];
-    const savoryRecipe = ['Eyeball Appetizer', 'Breadstick Serpent', 'Pumpkin Baked Brie'];
-    const drinksList = ['Apple Cider', 'Spirit\'s Sprite', 'Vampire Blood']
+    // const sweetRecipe = ['BOOberry Pies', 'Rice Crispy Brains', 'Mummy Cake Pops'];
+    const sweetRecipe = [
+        { name: 'BOOberry Pies', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
+        { name: 'Rice Crispy Brains', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
+        { name: 'Mummy Cake Pops', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' }
+    ];
+    const savoryRecipe = [
+        { name: 'Eyeball Appetizer', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
+        { name: 'Breadstick Serpent', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
+        { name: 'Pumpkin Baked Brie', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' }
+    ];
+    const drinksList = [
+        { name: 'Apple Cider', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
+        { name: 'Spirit\'s Sprite', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
+        { name: 'Vampire Blood', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' }
+    ];
 
     // Clear DOM Tree for new list
     // Not sure if this optimal, but wanted to keep with using loops and DOM Manipulation
@@ -19,43 +32,46 @@ function showRecipe() {
     // Radio Button check
     if (sweetIsChecked) {
         console.log('sweet');
-        
         // for loop: add items from list to DOM
-        for(var i = 0; i < sweetRecipe.length; i++) {
+        for(let i = 0; i < sweetRecipe.length; i++) {
             const sweetItem = document.createElement("li");
-            sweetItem.textContent = sweetRecipe[i];
+            const link = document.createElement("a");
+            
+            link.textContent = sweetRecipe[i].name;
+            link.href = sweetRecipe[i].url;
+            
+            sweetItem.appendChild(link);
+            sweetItem.className = 'sweet';
             recipeDisplay.appendChild(sweetItem);
         }
-
-        // change text color
-        recipeDisplay.className = 'sweet';
-
     } else if (savoryIsChecked) {
         console.log('savory');
-
         // for loop: add items from list to DOM
-        for(var i = 0; i < savoryRecipe.length; i++) {
+        for(let i = 0; i < savoryRecipe.length; i++) {
             const savoryItem = document.createElement("li");
-            savoryItem.textContent = savoryRecipe[i];
-            recipeDisplay.appendChild(savoryItem); 
+            const link = document.createElement("a");
+            
+            link.textContent = savoryRecipe[i].name;
+            link.href = savoryRecipe[i].url;
+            
+            savoryItem.appendChild(link);
+            savoryItem.className = 'savory';
+            recipeDisplay.appendChild(savoryItem);
         }
-        
-        // change text color
-        recipeDisplay.className = 'savory';
-
     } else if (drinkIsChecked) {
         console.log('drinks');
-
         // for loop: add items from list to DOM
-        for(var i = 0; i < drinksList.length; i++) {
+        for(let i = 0; i < drinksList.length; i++) {
             const drinkItem = document.createElement("li");
-            drinkItem.textContent = drinksList[i];
-            recipeDisplay.appendChild(drinkItem); 
-        }
-        
-        // change text color
-        recipeDisplay.className = 'drinks';
+            const link = document.createElement("a");
 
+            link.textContent = drinksList[i].name;
+            link.href = drinksList[i].url;
+
+            drinkItem.appendChild(link);
+            drinkItem.className = "drinks";
+            recipeDisplay.appendChild(drinkItem);
+        }
     } else {
         console.log('notChosen');
         recipeDisplay.textContent = "Please select a recipe type.";
