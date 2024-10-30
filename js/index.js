@@ -6,7 +6,6 @@ function showRecipe() {
     const recipeDisplay = document.getElementById('recipe-list');
     
     // Recipes
-    // const sweetRecipe = ['BOOberry Pies', 'Rice Crispy Brains', 'Mummy Cake Pops'];
     const sweetRecipe = [
         { name: 'BOOberry Pies', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
         { name: 'Rice Crispy Brains', url: 'https://youtu.be/dQw4w9WgXcQ?si=7fU6WT2-AAQKSU9l' },
