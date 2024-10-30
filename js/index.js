@@ -1,12 +1,17 @@
 function showRecipe() {
-    // setup recipes
+    // setup checks
     const sweetIsChecked = document.getElementById('sweet-treats').checked;
     const savoryIsChecked = document.getElementById('savory-eats').checked;
-    const showRecipe = document.getElementById('show-recipe');
+    
+    // setup recipes
+    let sweetRecipe = ['1', '2', '3'];
+    let savoryRecipe = ['1', '2', '3'];
+    const showRecipe = document.getElementById('text');
     
 
     if(sweetIsChecked) {
         console.log('sweet');
+        
 
     }
     else if (savoryIsChecked)
@@ -15,11 +20,6 @@ function showRecipe() {
     }
     else {
         console.log('notChosen');
+        text.textContent = "not chosen";
     }
-
-
-
-
-
-
 }
