@@ -2,18 +2,34 @@ function showRecipe() {
     // Setup checks
     const sweetIsChecked = document.getElementById('sweet-treats').checked;
     const savoryIsChecked = document.getElementById('savory-eats').checked;
-    const recipeDisplay = document.getElementById('text');
+    const recipeDisplay = document.getElementById('recipe-list');
     
     // Setup recipes
-    const sweetRecipe = ['1', '2', '3'];
-    const savoryRecipe = ['1', '2', '3'];
-    
+    const sweetRecipe = ['BOOberry Pies', 'Rice Crispy Brains', 'Mummy Cake Pops'];
+    const savoryRecipe = ['Eyeball Appetizer', 'Breadstick Serpent', 'Pumpkin Baked Brie'];
+
+    // Clear DOM Tree for new list
+    // Not sure if this optimal, but wanted to keep with using loops and DOM Manipulation
+    while (recipeDisplay.firstChild) {
+        recipeDisplay.removeChild(recipeDisplay.firstChild);
+    }
     
     if (sweetIsChecked) {
         console.log('sweet');
-
+        
+        for(var i = 0; i < sweetRecipe.length; i++) {
+            const sweetItem = document.createElement("li");
+            sweetItem.textContent = sweetRecipe[i];
+            recipeDisplay.appendChild(sweetItem);
+        }
     } else if (savoryIsChecked) {
         console.log('savory');
+
+        for(var i = 0; i < savoryRecipe.length; i++) {
+            const savoryItem = document.createElement("li");
+            savoryItem.textContent = savoryRecipe[i];
+            recipeDisplay.appendChild(savoryItem); 
+        }
 
     } else {
         console.log('notChosen');
