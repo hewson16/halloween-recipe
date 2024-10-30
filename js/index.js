@@ -2,11 +2,13 @@ function showRecipe() {
     // Setup radio checks
     const sweetIsChecked = document.getElementById('sweet-treats').checked;
     const savoryIsChecked = document.getElementById('savory-eats').checked;
+    const drinkIsChecked = document.getElementById('drinks').checked;
     const recipeDisplay = document.getElementById('recipe-list');
     
     // Recipes
     const sweetRecipe = ['BOOberry Pies', 'Rice Crispy Brains', 'Mummy Cake Pops'];
     const savoryRecipe = ['Eyeball Appetizer', 'Breadstick Serpent', 'Pumpkin Baked Brie'];
+    const drinksList = ['Apple Cider', 'Spirit\'s Sprite', 'Vampire Blood']
 
     // Clear DOM Tree for new list
     // Not sure if this optimal, but wanted to keep with using loops and DOM Manipulation
@@ -40,6 +42,19 @@ function showRecipe() {
         
         // change text color
         recipeDisplay.className = 'savory';
+
+    } else if (drinkIsChecked) {
+        console.log('drinks');
+
+        // for loop: add items from list to DOM
+        for(var i = 0; i < drinksList.length; i++) {
+            const drinkItem = document.createElement("li");
+            drinkItem.textContent = drinksList[i];
+            recipeDisplay.appendChild(drinkItem); 
+        }
+        
+        // change text color
+        recipeDisplay.className = 'drinks';
 
     } else {
         console.log('notChosen');
