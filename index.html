@@ -3,6 +3,23 @@
         <title>Halloween Recipes</title>
     </header>
     <body>
-        <h1>Boo</h1>
+        <h1>Halloween Recipe Ideas</h1>
+
+        <p>What type of recipes are you interested in?</p>
+
+        <div>
+            <input type="radio" id="sweet-treats" name="recipe" value="ST"> 
+            <label for="sweet-treats">Sweet Treats</label>
+        </div>
+        <div>
+            <input type="radio" id="savory-eats" name="recipe" value="SE"> 
+            <label for="savory-eats">Savory Eats</label>
+        </div>
+
+        <button id="show-recipe" onclick="showRecipe()">Show me ideas</button>
+
+        <p id="show-recipe"></p>
+
+        <script src="js/index.js"></script> 
     </body>
 </html
