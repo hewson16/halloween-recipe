@@ -1,10 +1,10 @@
 function showRecipe() {
-    // Setup checks
+    // Setup radio checks
     const sweetIsChecked = document.getElementById('sweet-treats').checked;
     const savoryIsChecked = document.getElementById('savory-eats').checked;
     const recipeDisplay = document.getElementById('recipe-list');
     
-    // Setup recipes
+    // Recipes
     const sweetRecipe = ['BOOberry Pies', 'Rice Crispy Brains', 'Mummy Cake Pops'];
     const savoryRecipe = ['Eyeball Appetizer', 'Breadstick Serpent', 'Pumpkin Baked Brie'];
 
@@ -14,22 +14,32 @@ function showRecipe() {
         recipeDisplay.removeChild(recipeDisplay.firstChild);
     }
     
+    // Radio Button check
     if (sweetIsChecked) {
         console.log('sweet');
         
+        // for loop: add items from list to DOM
         for(var i = 0; i < sweetRecipe.length; i++) {
             const sweetItem = document.createElement("li");
             sweetItem.textContent = sweetRecipe[i];
             recipeDisplay.appendChild(sweetItem);
         }
+
+        // change text color
+        recipeDisplay.className = 'sweet';
+
     } else if (savoryIsChecked) {
         console.log('savory');
 
+        // for loop: add items from list to DOM
         for(var i = 0; i < savoryRecipe.length; i++) {
             const savoryItem = document.createElement("li");
             savoryItem.textContent = savoryRecipe[i];
             recipeDisplay.appendChild(savoryItem); 
         }
+        
+        // change text color
+        recipeDisplay.className = 'savory';
 
     } else {
         console.log('notChosen');
