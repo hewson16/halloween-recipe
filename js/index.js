@@ -1,25 +1,22 @@
 function showRecipe() {
-    // setup checks
+    // Setup checks
     const sweetIsChecked = document.getElementById('sweet-treats').checked;
     const savoryIsChecked = document.getElementById('savory-eats').checked;
+    const recipeDisplay = document.getElementById('text');
     
-    // setup recipes
-    let sweetRecipe = ['1', '2', '3'];
-    let savoryRecipe = ['1', '2', '3'];
-    const showRecipe = document.getElementById('text');
+    // Setup recipes
+    const sweetRecipe = ['1', '2', '3'];
+    const savoryRecipe = ['1', '2', '3'];
     
-
-    if(sweetIsChecked) {
+    
+    if (sweetIsChecked) {
         console.log('sweet');
-        
 
-    }
-    else if (savoryIsChecked)
-    {  
+    } else if (savoryIsChecked) {
         console.log('savory');
-    }
-    else {
+
+    } else {
         console.log('notChosen');
-        text.textContent = "not chosen";
+        recipeDisplay.textContent = "Please select a recipe type.";
     }
 }
